@@ -1,0 +1,122 @@
+header {
+  height: 80px;
+  width: 100%;
+  background-color: var(--prime-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  --item-height: 40px;
+
+  @mixin head {
+    height: var(--item-height);
+    padding-block: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: all 200ms;
+
+    &:hover {
+      border-color: #ccc;
+    }
+
+    &::before {
+      font: var(--fa-font-solid);
+      margin-right: 10px;
+      font-size: 0.9rem;
+    }
+  }
+
+  .headLogo {
+    height: var(--item-height);
+  }
+
+  .headLocation {
+    @include head;
+    &::before {
+      content: "\f124";
+    }
+  }
+
+  .headGift {
+    @include head;
+    &::before {
+      content: "\f06b";
+    }
+  }
+
+  .headSearchBox {
+    @include head;
+    width: 40%;
+    height: 40px;
+    padding: 0;
+    border: none;
+    position: relative;
+
+    .searchCategories {
+      all: unset;
+      height: 100%;
+      padding-inline: 5px;
+      border-radius: 5px 0 0 5px;
+      background-color: var(--second-color);
+      text-align: center;
+
+      &:hover {
+        filter: brightness(1.1);
+      }
+    }
+
+    .searchBox {
+      all: unset;
+      padding-inline: 10px;
+      height: 100%;
+      width: 100%;
+      border-radius: 0;
+      background-color: #fff;
+      color: black;
+      cursor: text;
+      font-size: 1.2rem;
+
+      &::placeholder {
+        color: #999;
+      }
+    }
+
+    .searchBtn {
+      all: unset;
+      border-radius: 0 5px 5px 0;
+      height: 100%;
+      padding-inline: 8px;
+      background-color: var(--second-color);
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(1.1);
+      }
+    }
+  }
+
+  .headOrder {
+    @include head;
+    &::before {
+      content: "\f4de";
+    }
+  }
+
+  .headAccount {
+    @include head;
+    &::before {
+      content: "\f007";
+    }
+  }
+
+  .headBasket {
+    @include head;
+    &::before {
+      content: "\f07a";
+    }
+  }
+}

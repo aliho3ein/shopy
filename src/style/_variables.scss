@@ -1,0 +1,25 @@
+/**Fonts**/
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
+/**CSS Normalize**/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**Colors**/
+body {
+  --prime-color: #051937;
+  --second-color: #f95e26;
+  font-family: "Lato", sans-serif;
+}
+
+$color-gradient: linear-gradient(
+  to right,
+  var(--prime-color) 60%,
+  var(--second-color)
+);
