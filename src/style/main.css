@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**Fonts**/
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
@@ -320,16 +321,17 @@ nav ul li ul.productNav li:hover {
   align-items: center;
 }
 .dotHolder span {
-  height: 100%;
-  width: 15px;
+  aspect-ratio: 1;
+  width: 10px;
   border-radius: 50%;
   background: var(--prime-color);
-  margin: 0 2px;
+  margin: 0 4px;
   cursor: pointer;
-  transition: background 300ms ease;
+  transition: all 300ms ease;
 }
 .dotHolder span.active {
   background: var(--second-color);
+  transform: scale(1.4);
 }
 
 /* ================================== Change it For new Class Name */
@@ -354,4 +356,198 @@ nav ul li ul.productNav li:hover {
 
 .slideBase:hover span {
   opacity: 1;
+}
+
+.categoryList {
+  width: 80vw;
+  min-width: 300px;
+  margin: 50px auto;
+  padding: 50px 80px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  /**Btn */
+}
+.categoryList::after, .categoryList::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f2f2f2, #cbcbcb);
+  box-shadow: 5px 5px 10px #c0c0c0, -5px -5px 10px #ffffff;
+  cursor: pointer;
+  display: none;
+}
+.categoryList::after {
+  right: 0;
+  left: unset;
+}
+.categoryList .CatCard {
+  width: 15%;
+  min-width: 200px;
+  aspect-ratio: 1;
+  border-radius: 15px;
+  background: #e2e2e2;
+  box-shadow: 6px 6px 12px #c0c0c0, -6px -6px 12px #ffffff;
+  cursor: pointer;
+  text-align: center;
+  transition: all 300ms;
+}
+.categoryList .CatCard:hover {
+  transform: scale(1.05);
+}
+.categoryList .CatCard .cardImg {
+  width: 80%;
+  height: 70%;
+  margin: 10% auto 0;
+  background-image: url(https://cms-images.mmst.eu/fw7ws5lvie5f/1HU9DhcM2mM6lUl9nzIyLk/7658234fa1d87c09563550f9c91bdbc3/notebooks.png?q=80&w=264);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.categoryList .brandCard {
+  height: 150px;
+  aspect-ratio: 1;
+  --img: url("https://logosmarken.com/wp-content/uploads/2020/04/Sony-Logo.png");
+  border-radius: 10px;
+  background: center/70% var(--img) no-repeat, linear-gradient(145deg, #cbcbcb, #f2f2f2);
+  box-shadow: 8px 8px 16px #c9c9c9, -8px -8px 16px #fbfbfb;
+  cursor: pointer;
+}
+
+#content {
+  width: 80%;
+  padding-block: 100px;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+#content .contentTitle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.8rem;
+}
+#content .itemCard {
+  height: 400px;
+  width: 20%;
+  min-width: 250px;
+  display: flex;
+  margin: 0 2.5% 5% 2.5%;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 25px;
+  border-radius: 10px;
+  background: #e2e2e2;
+  box-shadow: 6px 6px 12px #d0d0d0, -6px -6px 12px #f4f4f4;
+  position: relative;
+}
+#content .itemCard .cardSoldOut {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  background: center/80% url("src/assets/image/ausverkauft.png") no-repeat rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  z-index: 2;
+}
+#content .itemCard .cardImg {
+  height: 50%;
+  width: 80%;
+  background-position: center;
+  background-size: cover;
+}
+#content .itemCard p {
+  margin-block: 10px 0;
+}
+#content .itemCard p span {
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-right: 0.6rem;
+}
+#content .itemCard .cardPrice {
+  width: 100%;
+  margin-top: auto;
+  text-align: left;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+}
+#content .itemCard .cardPrice .salePrice {
+  font-size: 0.7rem;
+  display: block;
+}
+#content .itemCard .cardPrice .salePrice span {
+  padding-left: 5px;
+  position: relative;
+}
+#content .itemCard .cardPrice .salePrice span:before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  top: 8px;
+  left: 3px;
+  transform: rotate(15deg);
+  background-color: #333;
+}
+#content .itemCard .cardPrice span::after {
+  content: " €";
+}
+#content .itemCard .cardSt {
+  width: 100%;
+  font-size: 0.7rem;
+  color: #777;
+  text-decoration: underline;
+}
+#content .pageNumber {
+  width: 100%;
+  height: 35px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+#content .pageNumber .numbers {
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  background: linear-gradient(145deg, #cbcbcb, #f2f2f2);
+  box-shadow: 4px 4px 7px #c9c9c9, -4px -4px 7px #fbfbfb;
+}
+#content .pageNumber .numbers:active {
+  background: linear-gradient(145deg, #f2f2f2, #cbcbcb);
+  box-shadow: 4px 4px 7px #b5b5b5, -4px -4px 7px #ffffff;
+}
+#content .pageNumber .numbers.activePg {
+  background: linear-gradient(145deg, #f2f2f2, #cbcbcb);
+  box-shadow: 4px 4px 7px #b5b5b5, -4px -4px 7px #ffffff;
+}
+#content .pageNumber .backBtn::after {
+  content: "\f104";
+  font: var(--fa-font-solid);
+}
+#content .pageNumber .forwardBtn::after {
+  content: "\f105";
+  font: var(--fa-font-solid);
+}
+
+body {
+  background-color: #e2e2e2;
 }/*# sourceMappingURL=main.css.map */

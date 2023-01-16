@@ -1,0 +1,68 @@
+.categoryList {
+  width: 80vw;
+  min-width: 300px;
+  margin: 50px auto;
+  padding: 50px 80px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+
+  /**Btn */
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #f2f2f2, #cbcbcb);
+    box-shadow: 5px 5px 10px #c0c0c0, -5px -5px 10px #ffffff;
+    cursor: pointer;
+    display: none;
+  }
+  &::after {
+    right: 0;
+    left: unset;
+  }
+
+  .CatCard {
+    width: 15%;
+    min-width: 200px;
+    aspect-ratio: 1;
+    border-radius: 15px;
+    background: #e2e2e2;
+    box-shadow: 6px 6px 12px #c0c0c0, -6px -6px 12px #ffffff;
+    cursor: pointer;
+    text-align: center;
+    transition: all 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    .cardImg {
+      width: 80%;
+      height: 70%;
+      margin: 10% auto 0;
+      background-image: url(https://cms-images.mmst.eu/fw7ws5lvie5f/1HU9DhcM2mM6lUl9nzIyLk/7658234fa1d87c09563550f9c91bdbc3/notebooks.png?q=80&w=264);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .brandCard {
+    height: 150px;
+    aspect-ratio: 1;
+    --img: url("https://logosmarken.com/wp-content/uploads/2020/04/Sony-Logo.png");
+    border-radius: 10px;
+    background: center / 70% var(--img) no-repeat,
+      linear-gradient(145deg, #cbcbcb, #f2f2f2);
+    box-shadow: 8px 8px 16px #c9c9c9, -8px -8px 16px #fbfbfb;
+    cursor: pointer;
+  }
+}

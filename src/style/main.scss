@@ -2,5 +2,10 @@
 @import "./header";
 @import "./navBar";
 @import "./slideShow";
+@import "./categoryList";
 @import "./content";
 @import "./footer";
+
+body {
+  background-color: #e2e2e2;
+}

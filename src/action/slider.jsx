@@ -2,7 +2,7 @@ let img, width, intervalId, slider, placeHolder, pic, time;
 let slideNr = 1;
 
 /* Check Input Item */
-export default function createSlidShow(auto = 3) {
+export default function createSlidShow(auto = 5) {
   slider = document.querySelector(".slidShow");
   placeHolder = document.querySelector(".slideBase");
   pic = document.querySelectorAll(".slid");
