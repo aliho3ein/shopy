@@ -6,6 +6,9 @@
 @import "./content";
 @import "./footer";
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #e2e2e2;
 }

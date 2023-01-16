@@ -423,24 +423,30 @@ nav ul li ul.productNav li:hover {
 #content {
   width: 80%;
   padding-block: 100px;
-  margin: 50px auto;
+  margin-inline: auto;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   position: relative;
+  justify-content: center;
+  gap: 5%;
 }
 #content .contentTitle {
   position: absolute;
-  top: 0;
+  top: 50px;
   left: 0;
   font-size: 1.8rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 #content .itemCard {
   height: 400px;
   width: 20%;
   min-width: 250px;
   display: flex;
-  margin: 0 2.5% 5% 2.5%;
+  margin-top: 5%;
   align-items: center;
   flex-direction: column;
   cursor: pointer;
@@ -522,6 +528,7 @@ nav ul li ul.productNav li:hover {
           user-select: none;
 }
 #content .pageNumber .numbers {
+  all: unset;
   height: 100%;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -546,6 +553,10 @@ nav ul li ul.productNav li:hover {
 #content .pageNumber .forwardBtn::after {
   content: "\f105";
   font: var(--fa-font-solid);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

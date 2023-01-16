@@ -25,7 +25,8 @@ const PageNumber: FC<counter> = ({ length, items, currentPage, setPage }) => {
     if (show == currentPage / items) {
       show++;
       return (
-        <div
+        <a
+          href="#content"
           className={`numbers activePg pg${item}}`}
           onClick={() => {
             setPage(items * (item - 1));
@@ -33,13 +34,13 @@ const PageNumber: FC<counter> = ({ length, items, currentPage, setPage }) => {
           key={item}
         >
           {item}
-        </div>
+        </a>
       );
     } else if (show == currentPage / items - 1) {
       show++;
 
       return (
-        <div
+        <a
           className={`numbers pg${item}}`}
           onClick={() => {
             setPage(items * (item - 1));
@@ -47,12 +48,12 @@ const PageNumber: FC<counter> = ({ length, items, currentPage, setPage }) => {
           key={item}
         >
           {item}
-        </div>
+        </a>
       );
     } else if (show == currentPage / items + 1) {
       show++;
       return (
-        <div
+        <a
           className={`numbers pg${item}}`}
           onClick={() => {
             setPage(items * (item - 1));
@@ -60,7 +61,7 @@ const PageNumber: FC<counter> = ({ length, items, currentPage, setPage }) => {
           key={item}
         >
           {item}
-        </div>
+        </a>
       );
     } else show++;
   });
@@ -86,22 +87,24 @@ const PageNumber: FC<counter> = ({ length, items, currentPage, setPage }) => {
       {count >= 1 && (
         <div className="pageNumber">
           {count >= 2 && (
-            <div
+            <a
+              href="#content"
               className="numbers backBtn"
               onClick={lastPage}
               title="Zurück"
-            ></div>
+            ></a>
           )}
 
           {numBtn}
 
           {count >= 4 && <span>...</span>}
           {count >= 2 && (
-            <div
+            <a
+              href="#content"
               className="numbers forwardBtn"
               onClick={nextPage}
               title="Weiter"
-            ></div>
+            ></a>
           )}
         </div>
       )}
