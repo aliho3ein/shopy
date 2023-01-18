@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FC } from "react";
-import createSlidShow from "../../action/slider.jsx";
+import createSlidShow from "../../action/slider";
 
 const Images = [
   "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/03/Person-sitting-next-to-a-laptop-that-is-displaying-a-black-background.jpg",
@@ -13,7 +13,7 @@ const SlidShow: FC = () => {
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
-    load && createSlidShow();
+    load && createSlidShow(5);
     setLoad(true);
   }, [load]);
 
@@ -28,8 +28,10 @@ const SlidShow: FC = () => {
   });
 
   return (
-    <div className="slideBase" data-auto="3">
-      <div className="slidShow">{Pics}</div>
+    <div>
+      <div className="slideBase" data-auto="3">
+        <div className="slidShow">{Pics}</div>
+      </div>
     </div>
   );
 };

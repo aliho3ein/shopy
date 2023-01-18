@@ -11,15 +11,10 @@ interface Action {
 }
 
 const mainReducer: Reducer<State, Action> = (state, action) => {
-  switch (action.type) {
-    case "addAll":
-      return { ...state };
-    default:
-      return (state = {
-        category: [action.payload.cat],
-        items: [action.payload.it],
-      });
-  }
+  return (state = {
+    category: action.payload.cat,
+    items: action.payload.it,
+  });
 };
 
 export default mainReducer;

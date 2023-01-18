@@ -29,6 +29,11 @@ footer {
       margin-left: 60%;
       font-size: 1.2rem;
       border-radius: 5px 0 0 5px;
+      transition: all 300ms;
+
+      &:focus {
+        background-color: #fff;
+      }
     }
 
     button {
@@ -38,6 +43,12 @@ footer {
       vertical-align: 1px;
       background-color: var(--second-color);
       border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: all 300ms;
+
+      &:hover {
+        filter: brightness(1.1);
+      }
     }
   }
 

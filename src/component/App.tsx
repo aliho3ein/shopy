@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useReducer } from "react";
 import { Routes, Route } from "react-router-dom";
 import mainReducer from "../reducer/mainReducer";
 import mainContext from "../context/mainContext";
-/** Components */
+/** Pages */
 import Home from "../page/home";
+import Product from "../page/product";
+/** Components */
 import Header from "./main/header";
 import Navbar from "./main/navbar";
 import Footer from "./main/footer";
@@ -19,22 +21,18 @@ function App() {
 
   /**Loading */
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 2000);
-  }, []);
 
   return (
-    <>
-      {loading && <PopUp />}
-      <mainContext.Provider value={{ state, dispatch }}>
-        <Header />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </mainContext.Provider>
+    <mainContext.Provider value={{ state, dispatch, loading }}>
+      {loading && <PopUp setLoad={setLoading} />}
+      <Header />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product" element={<Product />} />
+      </Routes>
       <Footer />
-    </>
+    </mainContext.Provider>
   );
 }
 

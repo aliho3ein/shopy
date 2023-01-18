@@ -5,6 +5,7 @@
   --dot-color-active: var(--second-color);
   --slidShow-height: 400px;
   --slidShow-width: 80vw;
+  z-index: 3;
 
   .slid {
     background-size: cover;

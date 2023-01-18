@@ -2,18 +2,20 @@ let img, width, intervalId, slider, placeHolder, pic, time;
 let slideNr = 1;
 
 /* Check Input Item */
-export default function createSlidShow(auto = 5) {
-  slider = document.querySelector(".slidShow");
-  placeHolder = document.querySelector(".slideBase");
-  pic = document.querySelectorAll(".slid");
-  auto && auto > 0 ? (time = auto * 1000) : (auto = false);
-  img = [...slider.children].filter((e) => e.classList.contains("slid"));
-  /**Call Functions */
-  CreateHtmlDiv();
-  createNexAndPer();
-  createDot();
-  automatic();
-  mouseEvent();
+export default function createSlidShow(auto) {
+  if (auto) {
+    slider = document.querySelector(".slidShow");
+    placeHolder = document.querySelector(".slideBase");
+    pic = document.querySelectorAll(".slid");
+    auto && auto > 0 ? (time = auto * 1000) : (auto = false);
+    img = [...slider.children].filter((e) => e.classList.contains("slid"));
+    /**Call Functions */
+    CreateHtmlDiv();
+    createNexAndPer();
+    createDot();
+    automatic();
+    mouseEvent();
+  }
 }
 
 /* Create HTML Side */
@@ -90,10 +92,10 @@ const show = (num) => {
   let x = parseInt(width) * (slideNr - 1);
 
   /* add Class Active to dot */
-  document.querySelector(`.active`).classList.remove("active");
+  document.querySelector(`.active`)?.classList.remove("active");
   document
     .querySelector(`.dot[data-select="${slideNr}"]`)
-    .classList.add("active");
+    ?.classList.add("active");
 
   /* Move the Pics */
   slider.style.marginLeft = -x + "px";

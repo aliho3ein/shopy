@@ -3,6 +3,8 @@ nav {
   background-color: var(--prime-color);
   color: #ccc;
   filter: grayscale(40%);
+  position: relative;
+  z-index: 9;
 
   ul {
     list-style: none;
@@ -16,28 +18,19 @@ nav {
       all: unset;
     }
 
-    li {
-      cursor: pointer;
-      font-size: 1.1rem;
-      transition: color 200ms;
+    .mainNavPro {
       position: relative;
 
-      &:hover {
-        color: var(--second-color);
+      &::after {
+        margin-left: 15px;
+        content: "\f0d7";
+        font: var(--fa-font-solid);
       }
-
-      &:nth-child(3) {
-        &::after {
-          margin-left: 15px;
-          content: "\f0d7";
-          font: var(--fa-font-solid);
-        }
-        &:hover .productNav {
-          display: block;
-        }
-        &:hover::after {
-          content: "\f0d8";
-        }
+      &:hover .productNav {
+        display: block;
+      }
+      &:hover::after {
+        content: "\f0d8";
       }
 
       ul.productNav {
@@ -53,6 +46,16 @@ nav {
             color: var(--second-color);
           }
         }
+      }
+    }
+
+    li {
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: color 200ms;
+
+      &:hover {
+        color: var(--second-color);
       }
     }
 

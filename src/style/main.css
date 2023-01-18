@@ -15,7 +15,8 @@
 body {
   --prime-color: #051937;
   --second-color: #f95e26;
-  font-family: "Lato", sans-serif;
+  --main-font: "Lato";
+  font-family: var(--main-font), sans-serif;
 }
 
 .square-of-dots {
@@ -322,6 +323,8 @@ nav {
   background-color: var(--prime-color);
   color: #ccc;
   filter: grayscale(40%);
+  position: relative;
+  z-index: 9;
 }
 nav ul {
   list-style: none;
@@ -334,37 +337,39 @@ nav ul {
 nav ul a {
   all: unset;
 }
-nav ul li {
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: color 200ms;
+nav ul .mainNavPro {
   position: relative;
 }
-nav ul li:hover {
-  color: var(--second-color);
-}
-nav ul li:nth-child(3)::after {
+nav ul .mainNavPro::after {
   margin-left: 15px;
   content: "\f0d7";
   font: var(--fa-font-solid);
 }
-nav ul li:nth-child(3):hover .productNav {
+nav ul .mainNavPro:hover .productNav {
   display: block;
 }
-nav ul li:nth-child(3):hover::after {
+nav ul .mainNavPro:hover::after {
   content: "\f0d8";
 }
-nav ul li ul.productNav {
+nav ul .mainNavPro ul.productNav {
   position: absolute;
   display: none;
   background-color: var(--prime-color);
   left: -30px;
 }
-nav ul li ul.productNav li {
+nav ul .mainNavPro ul.productNav li {
   padding: 10px 40px;
   color: #ccc;
 }
-nav ul li ul.productNav li:hover {
+nav ul .mainNavPro ul.productNav li:hover {
+  color: var(--second-color);
+}
+nav ul li {
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: color 200ms;
+}
+nav ul li:hover {
   color: var(--second-color);
 }
 nav ul .activeNav {
@@ -378,6 +383,7 @@ nav ul .activeNav {
   --dot-color-active: var(--second-color);
   --slidShow-height: 400px;
   --slidShow-width: 80vw;
+  z-index: 3;
 }
 .slideBase .slid {
   background-size: cover;
@@ -532,6 +538,7 @@ nav ul .activeNav {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  color: var(--prime-color);
 }
 #content .itemCard {
   height: 400px;
@@ -676,6 +683,10 @@ footer .footerTop input {
   margin-left: 60%;
   font-size: 1.2rem;
   border-radius: 5px 0 0 5px;
+  transition: all 300ms;
+}
+footer .footerTop input:focus {
+  background-color: #fff;
 }
 footer .footerTop button {
   all: unset;
@@ -684,6 +695,11 @@ footer .footerTop button {
   vertical-align: 1px;
   background-color: var(--second-color);
   border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: all 300ms;
+}
+footer .footerTop button:hover {
+  filter: brightness(1.1);
 }
 footer .footerBottom {
   height: auto;

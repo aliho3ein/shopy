@@ -15,7 +15,8 @@
 body {
   --prime-color: #051937;
   --second-color: #f95e26;
-  font-family: "Lato", sans-serif;
+  --main-font: "Lato";
+  font-family: var(--main-font), sans-serif;
 }
 
 $color-gradient: linear-gradient(
