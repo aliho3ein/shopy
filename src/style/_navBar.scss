@@ -12,6 +12,10 @@ nav {
     gap: 2%;
     padding-block: 8px;
 
+    a {
+      all: unset;
+    }
+
     li {
       cursor: pointer;
       font-size: 1.1rem;
@@ -50,6 +54,10 @@ nav {
           }
         }
       }
+    }
+
+    .activeNav {
+      color: var(--second-color);
     }
   }
 }

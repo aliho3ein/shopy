@@ -1,11 +1,17 @@
 import { FC } from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar: FC = () => {
   return (
     <nav>
       <ul className="mainNav">
         <li>% Angebote</li>
-        <li>Home</li>
+        <NavLink
+          to="/"
+          className={({ isActive }: any) => isActive && "activeNav"}
+        >
+          <li>Home</li>
+        </NavLink>
         <li className="mainNavPro">
           Product
           <ul className="productNav">

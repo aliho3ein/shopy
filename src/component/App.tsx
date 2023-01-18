@@ -1,20 +1,39 @@
+import { useEffect, useState } from "react";
+import { useReducer } from "react";
+import { Routes, Route } from "react-router-dom";
+import mainReducer from "../reducer/mainReducer";
+import mainContext from "../context/mainContext";
 /** Components */
+import Home from "../page/home";
 import Header from "./main/header";
 import Navbar from "./main/navbar";
-import SlidShow from "./main/slideShow";
-import CategoryList from "./main/categoryList";
-import Content from "./main/content";
-import BrandList from "./main/brandList";
+import Footer from "./main/footer";
+import PopUp from "./main/popUp";
 
 function App() {
+  /**Reducer */
+  const [state, dispatch] = useReducer(mainReducer, {
+    category: [],
+    items: [],
+  });
+
+  /**Loading */
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
+  }, []);
+
   return (
     <>
-      <Header />
-      <Navbar />
-      <SlidShow />
-      <CategoryList />
-      <Content />
-      <BrandList />
+      {loading && <PopUp />}
+      <mainContext.Provider value={{ state, dispatch }}>
+        <Header />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </mainContext.Provider>
+      <Footer />
     </>
   );
 }

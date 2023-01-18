@@ -1,0 +1,155 @@
+footer {
+  height: auto;
+  width: 100vw;
+
+  .footerTop {
+    width: 100%;
+    background-color: #111;
+    padding: 50px 10%;
+
+    h2 {
+      color: #ccc;
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+    }
+
+    span {
+      color: #999;
+      display: block;
+    }
+
+    input {
+      all: unset;
+      height: 40px;
+      min-width: 250px;
+      width: 25%;
+      padding-inline: 10px;
+      background-color: #ccc;
+      margin-top: 20px;
+      margin-left: 60%;
+      font-size: 1.2rem;
+      border-radius: 5px 0 0 5px;
+    }
+
+    button {
+      all: unset;
+      height: 40px;
+      padding-inline: 10px;
+      vertical-align: 1px;
+      background-color: var(--second-color);
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  .footerBottom {
+    height: auto;
+    width: 100%;
+    background-color: #333;
+    padding-block: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #999;
+    font-size: 0.8rem;
+    user-select: none;
+
+    i {
+      margin: 20px 20px 0 0;
+      width: 80px;
+      padding-block: 5px;
+      text-align: center;
+      color: #999;
+      font-size: 1.8rem;
+      border: 1px solid #444;
+    }
+
+    .deliveryPartner {
+      width: 20%;
+      min-width: 200px;
+    }
+
+    .payment {
+      width: 70%;
+      min-width: 200px;
+    }
+
+    .footerColumn {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+
+      .column {
+        width: 20%;
+        min-width: 200px;
+        font-size: 1.2rem;
+        position: relative;
+
+        &::before {
+          font: var(--fa-font-solid);
+          font-size: 0.8rem;
+          position: absolute;
+          left: -20px;
+          top: 8px;
+        }
+
+        &:first-child::before {
+          content: "\f075";
+        }
+
+        &:nth-child(2)::before {
+          content: "\f2d2";
+        }
+
+        &:nth-child(3)::before {
+          content: "\f02e";
+        }
+
+        &:last-child::before {
+          content: "\f005";
+        }
+
+        ul {
+          list-style: none;
+          font-size: 1rem;
+          padding-left: 10px;
+
+          li {
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 300ms;
+
+            &:hover {
+              color: var(--second-color);
+            }
+          }
+        }
+      }
+    }
+
+    .footerSocial {
+      width: 80%;
+      min-width: 300px;
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+
+      i {
+        border: none;
+        width: auto;
+        cursor: pointer;
+        transition: color 300ms;
+
+        &:hover {
+          color: var(--second-color);
+        }
+      }
+    }
+
+    p {
+      width: 80%;
+      margin-top: 50px;
+      line-height: 1.5rem;
+    }
+  }
+}
