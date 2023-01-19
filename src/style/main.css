@@ -569,7 +569,8 @@ nav ul .activeNav {
   height: 50%;
   width: 80%;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 #content .itemCard p {
   margin-block: 10px 0;

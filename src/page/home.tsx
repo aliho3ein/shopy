@@ -9,7 +9,7 @@ const Home: FC = () => {
     <>
       <SlidShow />
       <CategoryList />
-      <Content value="" />
+      <Content value="/all/" />
       <BrandList />
     </>
   );

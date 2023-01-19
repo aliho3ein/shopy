@@ -29,7 +29,7 @@ const PopUp: FC<prop> = ({ setLoad }) => {
           type: "default",
           payload: {
             cat,
-            it,
+            it: it.reverse(),
           },
         });
         setTheme(Object.values(res.data.theme));

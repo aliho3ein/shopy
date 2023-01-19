@@ -9,14 +9,19 @@ import { useEffect } from "react";
 const Content: FC<any> = ({ value }) => {
   const [page, setPage] = useState(0);
   const [data, setData] = useState<any>([]);
+  const [title, setTitle] = useState("Tageshighlights");
 
   /** */
   const context = useContext(mainContext) as any;
 
   useEffect(() => {
-    if (!value) {
+    if (value == "/all/") {
       setData(context.state.items);
     } else {
+      setTitle(
+        context.state.category.find((cat: any) => cat.key == value).title
+      );
+
       setData(
         context.state.items.filter((item: any) => item.category == value)
       );
@@ -37,7 +42,7 @@ const Content: FC<any> = ({ value }) => {
 
   return (
     <div id="content">
-      <span className="contentTitle">Tageshighlights</span>
+      <span className="contentTitle">{title}</span>
       {product}
       {
         <PageNumber
