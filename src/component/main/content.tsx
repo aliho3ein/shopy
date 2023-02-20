@@ -1,12 +1,13 @@
-import { useState } from "react";
-import { FC } from "react";
+import { FC, useContext, useEffect, useState } from "react";
+import mainContext from "../../context/mainContext";
 import PageNumber from "../pagesNumber";
 import SingleItem from "../singleItem";
-import { useContext } from "react";
-import mainContext from "../../context/mainContext";
-import { useEffect } from "react";
 
-const Content: FC<any> = ({ value }) => {
+interface test {
+  value: string;
+}
+
+const Content = ({ value }: {value: string})=> {
   const [page, setPage] = useState(0);
   const [data, setData] = useState<any>([]);
   const [title, setTitle] = useState("Tageshighlights");

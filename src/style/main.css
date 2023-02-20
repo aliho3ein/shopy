@@ -807,6 +807,8 @@ html {
 body {
   background-color: #e2e2e2;
   position: relative;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 #popUp {

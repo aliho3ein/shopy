@@ -20,7 +20,7 @@ function App() {
   });
 
   /**Loading */
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   return (
     <mainContext.Provider value={{ state, dispatch, loading }}>
