@@ -214,18 +214,31 @@ header .headSearchBox .searchBox {
   height: 100%;
   width: 100%;
   border-radius: 0;
-  background-color: #fff;
+  background-color: #ddd;
   color: black;
   cursor: text;
   font-size: 1.2rem;
+  transition: all 200ms;
 }
 header .headSearchBox .searchBox::-moz-placeholder {
-  color: #999;
+  color: #666;
 }
 header .headSearchBox .searchBox:-ms-input-placeholder {
-  color: #999;
+  color: #666;
 }
 header .headSearchBox .searchBox::placeholder {
+  color: #666;
+}
+header .headSearchBox .searchBox:focus {
+  background-color: #fff;
+}
+header .headSearchBox .searchBox:focus::-moz-placeholder {
+  color: #999;
+}
+header .headSearchBox .searchBox:focus:-ms-input-placeholder {
+  color: #999;
+}
+header .headSearchBox .searchBox:focus::placeholder {
   color: #999;
 }
 header .headSearchBox .searchBtn {
@@ -238,6 +251,39 @@ header .headSearchBox .searchBtn {
 }
 header .headSearchBox .searchBtn:hover {
   filter: brightness(1.1);
+}
+header .headSearchBox #suggestList {
+  width: 100%;
+  max-height: 600px;
+  overflow-y: scroll;
+  position: absolute;
+  top: 40px;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  list-style-type: none;
+  border-radius: 5px 5px 0 0;
+  font-size: 1.2rem;
+}
+header .headSearchBox #suggestList li {
+  padding: 15px 40px;
+  color: #333;
+  transition: color 200ms;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-left: 5px solid transparent;
+}
+header .headSearchBox #suggestList li img {
+  height: 20px;
+  width: 20px;
+  margin-right: 20px;
+  vertical-align: top;
+}
+header .headSearchBox #suggestList li:hover {
+  color: var(--second-color);
+  background-color: var(--prime-color);
+  border-color: var(--second-color);
 }
 header .headOrder {
   height: var(--item-height);
@@ -540,6 +586,30 @@ nav ul .activeNav {
           user-select: none;
   color: var(--prime-color);
 }
+#content .filterBtn {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  font-size: 1.1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  color: var(--prime-color);
+  transition: all 200ms;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+#content .filterBtn:hover {
+  background-color: var(--second-color);
+}
+#content .filterBtn:before {
+  content: " \f1de  ";
+  font: var(--fa-font-solid);
+}
 #content .itemCard {
   height: 400px;
   width: 20%;
@@ -821,4 +891,18 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--second-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }/*# sourceMappingURL=main.css.map */

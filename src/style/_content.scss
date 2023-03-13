@@ -18,6 +18,30 @@
     color: var(--prime-color);
   }
 
+  .filterBtn {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    font-size: 1.1rem;
+    user-select: none;
+    cursor: pointer;
+    color: var(--prime-color);
+    transition: all 200ms;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: var(--second-color);
+    }
+
+    &:before {
+      content: " \f1de  ";
+      font: var(--fa-font-solid);
+    }
+  }
+
   .itemCard {
     height: 400px;
     width: 20%;

@@ -16,7 +16,6 @@ const Navbar: FC = () => {
 
   useEffect(() => {
     setCat(context.state.category);
-    // console.log(context.state.category);
   }, [context.loading]);
 
   const underNav = cat.map((item: any, key: number) => {

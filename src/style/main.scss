@@ -27,3 +27,18 @@ body {
   background-color: rgb(0 0 0 /0.7);
   backdrop-filter: blur(15px);
 }
+
+// Scroll
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--second-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}

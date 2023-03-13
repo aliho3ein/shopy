@@ -7,7 +7,7 @@ interface test {
   value: string;
 }
 
-const Content = ({ value }: {value: string})=> {
+const Content = ({ value }: { value: string }) => {
   const [page, setPage] = useState(0);
   const [data, setData] = useState<any>([]);
   const [title, setTitle] = useState("Tageshighlights");
@@ -28,10 +28,10 @@ const Content = ({ value }: {value: string})=> {
       );
     }
     setPage(0);
-  }, [value]);
+  }, [context.loading || value]);
 
   /**Count of Items in Each Page */
-  const Items = 10;
+  const Items = 12;
 
   let counter = 1;
   const product = data.map((item: any, index: any) => {
@@ -44,6 +44,7 @@ const Content = ({ value }: {value: string})=> {
   return (
     <div id="content">
       <span className="contentTitle">{title}</span>
+      <span className="filterBtn">Filter</span>
       {product}
       {
         <PageNumber

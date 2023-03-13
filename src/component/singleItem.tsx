@@ -32,7 +32,7 @@ const SingleItem: FC<myProps> = ({ value }) => {
   } = value;
 
   return (
-    <div className="itemCard" title={title}>
+    <div className="itemCard" title={description}>
       {soldOut && <div className="cardSoldOut"></div>}
       <div
         className="cardImg"

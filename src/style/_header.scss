@@ -75,13 +75,22 @@ header {
       height: 100%;
       width: 100%;
       border-radius: 0;
-      background-color: #fff;
+      background-color: #ddd;
       color: black;
       cursor: text;
       font-size: 1.2rem;
+      transition: all 200ms;
 
       &::placeholder {
-        color: #999;
+        color: #666;
+      }
+
+      &:focus {
+        background-color: #fff;
+
+        &::placeholder {
+          color: #999;
+        }
       }
     }
 
@@ -95,6 +104,42 @@ header {
 
       &:hover {
         filter: brightness(1.1);
+      }
+    }
+
+    #suggestList {
+      width: 100%;
+      max-height: 600px;
+      overflow-y: scroll;
+      position: absolute;
+      top: 40px;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(15px);
+      list-style-type: none;
+      border-radius: 5px 5px 0 0;
+      font-size: 1.2rem;
+
+      li {
+        padding: 15px 40px;
+        color: #333;
+        transition: color 200ms;
+        cursor: pointer;
+        box-sizing: border-box;
+        border-left: 5px solid transparent;
+
+        img {
+          height: 20px;
+          width: 20px;
+          margin-right: 20px;
+          vertical-align: top;
+        }
+
+        &:hover {
+          color: var(--second-color);
+          background-color: var(--prime-color);
+          border-color: var(--second-color);
+        }
       }
     }
   }

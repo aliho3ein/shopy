@@ -7,7 +7,6 @@ import BrandList from "../component/main/brandList";
 const Home: FC = () => {
   return (
     <>
-      <SlidShow />
       <CategoryList />
       <Content value="/all/" />
       <BrandList />

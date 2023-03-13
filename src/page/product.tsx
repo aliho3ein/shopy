@@ -6,7 +6,7 @@ import BrandList from "../component/main/brandList";
 
 const Product: FC = () => {
   /** Get Key */
-  const [param] = useSearchParams();
+  const [param] = useSearchParams() as any;
 
   return (
     <>
